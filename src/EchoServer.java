@@ -6,11 +6,11 @@ public class EchoServer {
         this.fakeConsole = fakeConsole;
     }
 
-    public void print(String message) {
+    private void print(String message) {
        fakeConsole.print(message);
     }
 
-    public String readUserInput() {
+    private String readUserInput() {
         return fakeConsole.read();
     }
 
