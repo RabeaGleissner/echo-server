@@ -13,4 +13,8 @@ public class EchoServer {
     public String readUserInput() {
         return fakeConsole.read();
     }
+
+    public void run() {
+        print(readUserInput());
+    }
 }

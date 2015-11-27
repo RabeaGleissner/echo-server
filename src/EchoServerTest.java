@@ -24,4 +24,11 @@ public class EchoServerTest {
         fakeConsole.provideConsoleInput("hola");
         assertEquals("hola", echoServer.readUserInput());
     }
+
+    @Test
+    public void printInputGivenByConsole() {
+        fakeConsole.provideConsoleInput("alright");
+        echoServer.run();
+        assertEquals("alright", fakeConsole.messagePrinted());
+    }
 }
