@@ -15,7 +15,7 @@ public class EchoServerTest {
 
     @Test
     public void printInputGivenByConsole() {
-        fakeConsole.provideConsoleInput("alright");
+        fakeConsole.provideConsoleInput("alright", "exit");
         echoServer.run();
         assertEquals("alright", fakeConsole.messagePrinted());
     }
@@ -25,5 +25,12 @@ public class EchoServerTest {
         fakeConsole.provideConsoleInput("exit");
         echoServer.run();
         assertEquals("", fakeConsole.messagePrinted());
+    }
+
+    @Test
+    public void keepPromptingUserUntilExit() {
+        fakeConsole.provideConsoleInput("hola", "hello", "exit");
+        echoServer.run();
+        assertEquals("holahello", fakeConsole.messagePrinted());
     }
 }

@@ -1,10 +1,14 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class FakeConsole {
     private String printedMessage;
-    private String userInput;
+    private List<String> userInput;
 
     public FakeConsole() {
         printedMessage = "";
-        userInput = "";
+        userInput = new ArrayList<>();
     }
 
     public String messagePrinted() {
@@ -13,14 +17,14 @@ public class FakeConsole {
     }
 
     public void print(String message) {
-        printedMessage = message;
+        printedMessage += message;
     }
 
     public String read() {
-        return userInput;
+        return userInput.remove(0);
     }
 
-    public void provideConsoleInput(String message) {
-        userInput = message;
+    public void provideConsoleInput(String ... message) {
+        userInput.addAll(Arrays.asList(message));
     }
 }

@@ -16,10 +16,13 @@ public class EchoServer {
 
     public void run() {
         String userInput = "";
-        userInput = readUserInput();
 
-        if (!userInput.equals("exit")) {
-            print(userInput);
+        while (!userInput.equals("exit")) {
+            userInput = readUserInput();
+
+            if (!userInput.equals("exit")) {
+                print(userInput);
+            }
         }
     }
 }
