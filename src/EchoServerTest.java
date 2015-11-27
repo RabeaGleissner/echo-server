@@ -18,4 +18,10 @@ public class EchoServerTest {
         echoServer.print("hello");
         assertEquals("hello", fakeConsole.messagePrinted());
     }
+
+    @Test
+    public void readConsoleInput() {
+        fakeConsole.provideConsoleInput("hola");
+        assertEquals("hola", echoServer.readUserInput());
+    }
 }

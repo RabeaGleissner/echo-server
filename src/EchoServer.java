@@ -9,4 +9,8 @@ public class EchoServer {
     public void print(String message) {
        fakeConsole.print(message);
     }
+
+    public String readUserInput() {
+        return fakeConsole.read();
+    }
 }
