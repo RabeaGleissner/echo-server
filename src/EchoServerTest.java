@@ -33,4 +33,11 @@ public class EchoServerTest {
         echoServer.run();
         assertEquals("holahello", fakeConsole.messagePrinted());
     }
+
+    @Test
+    public void printMethodCalledSeveralTimes() {
+        fakeConsole.provideConsoleInput("hola", "hello", "hallo", "exit");
+        echoServer.run();
+        assertEquals(3, fakeConsole.countPrintMethodCalls());
+    }
 }
