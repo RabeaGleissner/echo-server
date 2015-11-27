@@ -40,4 +40,11 @@ public class EchoServerTest {
         echoServer.run();
         assertEquals(3, fakeConsole.countPrintMethodCalls());
     }
+
+    @Test
+    public void countReadMethodCalls() {
+        fakeConsole.provideConsoleInput("hola", "hello", "ni hao", "exit");
+        echoServer.run();
+        assertEquals(4, fakeConsole.countReadMethodCalls());
+    }
 }
