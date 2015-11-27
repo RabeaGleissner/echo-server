@@ -1,17 +1,17 @@
 public class EchoServer {
 
-    private final FakeConsole fakeConsole;
+    private final Console console;
 
-    public EchoServer(FakeConsole fakeConsole) {
-        this.fakeConsole = fakeConsole;
+    public EchoServer(Console console) {
+        this.console = console;
     }
 
     private void print(String message) {
-       fakeConsole.print(message);
+       console.print(message);
     }
 
     private String readUserInput() {
-        return fakeConsole.read();
+        return console.read();
     }
 
     public void run() {
