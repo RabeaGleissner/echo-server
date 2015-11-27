@@ -15,6 +15,11 @@ public class EchoServer {
     }
 
     public void run() {
-        print(readUserInput());
+        String userInput = "";
+        userInput = readUserInput();
+
+        if (!userInput.equals("exit")) {
+            print(userInput);
+        }
     }
 }

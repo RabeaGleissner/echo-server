@@ -19,4 +19,11 @@ public class EchoServerTest {
         echoServer.run();
         assertEquals("alright", fakeConsole.messagePrinted());
     }
+
+    @Test
+    public void printNothingIfUserTypesExit() {
+        fakeConsole.provideConsoleInput("exit");
+        echoServer.run();
+        assertEquals("", fakeConsole.messagePrinted());
+    }
 }
