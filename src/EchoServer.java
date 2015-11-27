@@ -1,11 +1,23 @@
 public class EchoServer {
 
+    private static final String QUIT_COMMAND = "exit";
     private final Console console;
 
     public EchoServer(Console console) {
         this.console = console;
     }
 
+    public void run() {
+        String userInput = "";
+
+        while (userWantsToContinue(userInput)) {
+            userInput = readUserInput();
+
+            if (userWantsToContinue(userInput)) {
+                print(userInput);
+            }
+        }
+    }
     private void print(String message) {
        console.print(message);
     }
@@ -14,15 +26,11 @@ public class EchoServer {
         return console.read();
     }
 
-    public void run() {
-        String userInput = "";
-
-        while (!userInput.equals("exit")) {
-            userInput = readUserInput();
-
-            if (!userInput.equals("exit")) {
-                print(userInput);
-            }
+    private boolean userWantsToContinue(String userInput) {
+        if (userInput.equals(QUIT_COMMAND)) {
+            return false;
         }
+        return true;
     }
+
 }
