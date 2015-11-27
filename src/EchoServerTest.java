@@ -14,18 +14,6 @@ public class EchoServerTest {
     }
 
     @Test
-    public void printMessageToConsole() {
-        echoServer.print("hello");
-        assertEquals("hello", fakeConsole.messagePrinted());
-    }
-
-    @Test
-    public void readConsoleInput() {
-        fakeConsole.provideConsoleInput("hola");
-        assertEquals("hola", echoServer.readUserInput());
-    }
-
-    @Test
     public void printInputGivenByConsole() {
         fakeConsole.provideConsoleInput("alright");
         echoServer.run();
