@@ -1,4 +1,6 @@
+import java.io.InputStream;
 import java.util.Scanner;
+import java.util.concurrent.SynchronousQueue;
 
 public class RealConsole implements Console {
 
@@ -7,7 +9,7 @@ public class RealConsole implements Console {
     }
 
     public String read() {
-        Scanner user_input= new Scanner(System.in);
-        return user_input.nextLine();
+        Scanner userInput = new Scanner(System.in);
+        return userInput.nextLine();
     }
 }
