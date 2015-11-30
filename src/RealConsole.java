@@ -8,6 +8,6 @@ public class RealConsole implements Console {
 
     public String read() {
         Scanner user_input= new Scanner(System.in);
-        return user_input.next();
+        return user_input.nextLine();
     }
 }

@@ -35,6 +35,13 @@ public class EchoServerTest {
     }
 
     @Test
+    public void printsAllWordsOnALine() {
+        fakeConsole.provideConsoleInput("here are several words", "exit");
+        echoServer.run();
+        assertEquals("here are several words", fakeConsole.messagePrinted());
+    }
+
+    @Test
     public void printMethodCalledSeveralTimes() {
         fakeConsole.provideConsoleInput("hola", "hello", "hallo", "exit");
         echoServer.run();
