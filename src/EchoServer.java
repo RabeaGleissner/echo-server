@@ -8,29 +8,27 @@ public class EchoServer {
     }
 
     public void run() {
-        String userInput = "";
 
-        while (userWantsToContinue(userInput)) {
-            userInput = readUserInput();
+        while (true) {
+            String userInput = readUserInput();
 
-            if (userWantsToContinue(userInput)) {
-                print(userInput);
+            if (userWantsToExit(userInput)) {
+                break;
             }
+            print(userInput);
         }
     }
+
     private void print(String message) {
-       console.print(message);
+        console.print(message);
     }
 
     private String readUserInput() {
         return console.read();
     }
 
-    private boolean userWantsToContinue(String userInput) {
-        if (userInput.equals(QUIT_COMMAND)) {
-            return false;
-        }
-        return true;
+    private boolean userWantsToExit(String userInput) {
+        return userInput.equals(QUIT_COMMAND);
     }
 
 }
